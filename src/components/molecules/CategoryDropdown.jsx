@@ -93,7 +93,7 @@ const CategoryDropdown = ({ selectedCategory, onCategorySelect }) => {
                     selectedCategory === category ? 'text-accent font-medium' : 'text-slate-700'
                   }`}
                 >
-                  {category}
+{category}
                 </button>
               ))
             )}

@@ -15,7 +15,7 @@ const ProductGrid = ({ onAddToCart }) => {
     try {
       setLoading(true);
       setError("");
-      const data = await productService.getFeaturedProducts();
+const data = await productService.getFeaturedProducts();
       setProducts(data);
     } catch (err) {
       setError("Failed to load products. Please try again.");
@@ -72,7 +72,7 @@ const ProductGrid = ({ onAddToCart }) => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {products.map((product) => (
+{products.map((product) => (
             <motion.div
               key={product.Id}
               variants={itemVariants}

@@ -94,7 +94,7 @@ const addToCart = (product, customQuantity = 1) => {
   };
 
   const getCartTotal = () => {
-    return cartItems.reduce((total, item) => total + (item.product.price * item.quantity), 0);
+return cartItems.reduce((total, item) => total + (item.product.price_c * item.quantity), 0);
   };
 
   const getItemCount = () => {

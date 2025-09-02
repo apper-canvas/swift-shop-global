@@ -12,7 +12,7 @@ const ProductCard = ({ product, onAddToCart }) => {
 };
 
   const handleCardClick = () => {
-    navigate(`/products/${product.Id}`);
+navigate(`/products/${product.Id}`);
   };
   return (
 <motion.div
@@ -22,12 +22,12 @@ const ProductCard = ({ product, onAddToCart }) => {
     >
 <div className="relative">
         <img
-          src={product.image}
-          alt={product.title}
+src={product.image_c}
+          alt={product.title_c}
           className="w-full h-48 object-cover transition-transform duration-300 hover:scale-105"
           loading="lazy"
         />
-        {!product.inStock && (
+{!product.in_stock_c && (
           <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
             <Badge variant="error" size="md">
               Out of Stock
@@ -39,31 +39,31 @@ const ProductCard = ({ product, onAddToCart }) => {
       <div className="p-4 flex-1 flex flex-col">
         <div className="flex-1">
 <h3 className="font-semibold text-slate-800 mb-2 line-clamp-2 hover:text-accent transition-colors">
-            {product.title}
+{product.title_c}
           </h3>
           <p className="text-slate-600 text-sm mb-3 line-clamp-2">
-            {product.description}
+{product.description_c}
           </p>
         </div>
 
         <div className="flex items-center justify-between">
           <div className="flex flex-col">
             <span className="text-2xl font-bold text-accent">
-              ${product.price.toFixed(2)}
+${product.price_c.toFixed(2)}
             </span>
             <Badge variant="default" size="sm" className="self-start mt-1">
-              {product.category}
+{product.category_c}
             </Badge>
           </div>
 
           <Button
             onClick={handleAddToCart}
-            disabled={!product.inStock}
-            variant={product.inStock ? "primary" : "outline"}
+disabled={!product.in_stock_c}
+            variant={product.in_stock_c ? "primary" : "outline"}
             size="sm"
             className="shrink-0"
           >
-            {product.inStock ? "Add to Cart" : "Unavailable"}
+{product.in_stock_c ? "Add to Cart" : "Unavailable"}
           </Button>
         </div>
       </div>

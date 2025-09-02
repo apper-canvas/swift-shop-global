@@ -101,8 +101,8 @@ const ProductDetail = () => {
     if (!product) return [];
     return [
       { label: "Home", path: "/" },
-      { label: product.category, path: `/categories?category=${product.category}` },
-      { label: product.title, path: `/products/${product.Id}` }
+{ label: product.category_c, path: `/categories?category=${product.category_c}` },
+      { label: product.title_c, path: `/products/${product.Id}` }
     ];
   };
 
@@ -169,11 +169,11 @@ const ProductDetail = () => {
             {/* Main Image */}
             <div className="relative bg-slate-100 rounded-lg overflow-hidden aspect-square">
               <img
-                src={product.image}
-                alt={product.title}
+src={product.image_c}
+                alt={product.title_c}
                 className="w-full h-full object-cover"
               />
-              {!product.inStock && (
+{!product.in_stock_c && (
                 <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
                   <Badge variant="error" size="md">Out of Stock</Badge>
                 </div>
@@ -193,8 +193,8 @@ const ProductDetail = () => {
                   }`}
                 >
                   <img
-                    src={product.image}
-                    alt={`${product.title} view ${index + 1}`}
+src={product.image_c}
+                    alt={`${product.title_c} view ${index + 1}`}
                     className="w-full h-full object-cover"
                   />
                 </button>
@@ -214,7 +214,7 @@ const ProductDetail = () => {
             {/* Product Header */}
             <div>
               <div className="flex items-start justify-between mb-2">
-                <Badge variant="primary" size="sm">{product.category}</Badge>
+<Badge variant="primary" size="sm">{product.category_c}</Badge>
                 <button
                   onClick={toggleWishlist}
                   className="p-2 hover:bg-slate-100 rounded-full transition-colors"
@@ -228,7 +228,7 @@ const ProductDetail = () => {
               </div>
               
               <h1 className="text-3xl font-bold text-slate-900 mb-2">
-                {product.title}
+{product.title_c}
               </h1>
               
               <div className="flex items-center space-x-4 mb-4">
@@ -245,15 +245,15 @@ const ProductDetail = () => {
                 </div>
                 <div className="h-4 w-px bg-slate-300" />
                 <Badge 
-                  variant={product.inStock ? "success" : "error"}
+variant={product.in_stock_c ? "success" : "error"}
                   size="sm"
                 >
-                  {product.inStock ? "In Stock" : "Out of Stock"}
+{product.in_stock_c ? "In Stock" : "Out of Stock"}
                 </Badge>
               </div>
 
               <div className="text-3xl font-bold text-accent mb-6">
-                ${product.price.toFixed(2)}
+${product.price_c.toFixed(2)}
               </div>
             </div>
 
@@ -331,10 +331,10 @@ const ProductDetail = () => {
               size="xl"
               className="w-full"
               onClick={handleAddToCart}
-              disabled={!product.inStock}
+disabled={!product.in_stock_c}
             >
               <ApperIcon name="ShoppingCart" size={20} className="mr-2" />
-              Add to Cart - ${(product.price * quantity).toFixed(2)}
+Add to Cart - ${(product.price_c * quantity).toFixed(2)}
             </Button>
 
             {/* Product Description */}
@@ -360,7 +360,7 @@ const ProductDetail = () => {
                   className="mt-4 p-4 bg-white border border-slate-200 rounded-lg"
                 >
                   <p className="text-slate-600 leading-relaxed">
-                    {product.description}
+{product.description_c}
                   </p>
                 </motion.div>
               )}

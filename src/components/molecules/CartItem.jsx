@@ -28,15 +28,15 @@ const CartItem = ({ item, onUpdateQuantity, onRemove }) => {
       className="flex items-center gap-4 p-4 bg-white rounded-lg border border-slate-200"
     >
       <img
-        src={product.image}
-        alt={product.title}
+src={product.image_c}
+        alt={product.title_c}
         className="w-16 h-16 object-cover rounded-lg"
       />
 
       <div className="flex-1 min-w-0">
-        <h4 className="font-medium text-slate-800 truncate">{product.title}</h4>
-        <p className="text-sm text-slate-600 truncate">{product.category}</p>
-        <p className="font-semibold text-accent">${product.price.toFixed(2)}</p>
+<h4 className="font-medium text-slate-800 truncate">{product.title_c}</h4>
+        <p className="text-sm text-slate-600 truncate">{product.category_c}</p>
+<p className="font-semibold text-accent">${product.price_c.toFixed(2)}</p>
       </div>
 
       <div className="flex items-center gap-2">
